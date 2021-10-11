@@ -1,4 +1,4 @@
-LGA,LGA_CODE,Region,Median Age,Median Weekly Income ($),No. non-English speakers,N,Land Area (km^2),Population,Population Density (per km^2),Active,Total Cases,Active Cases per 100000,1st Vaccination %,2nd Vaccination %,log Active Cases,Median Weekly Income (normalised),sqrt Population Density,second
+LGA,LGA_CODE,Region,Median Age,Median Weekly Income ($),No. non English,non English per 100000,Land Area (km^2),P,Population Density (per km^2),Active,Total Cases,Active Cases per 100000,1st Vaccination %,2nd Vaccination %,log Active Cases,Median Weekly Income (normalised),sqrt Population Density,second
 Alpine,LGA20110,Regional,49,562,119,928.6717653,1849,12814,6.930232558,0,1,0,89.9,65.7,0,-0.487986045,2.632533487,65.7
 Ararat,LGA20260,Regional,46,556,78,658.5056986,1626,11845,7.284747847,7,15,59.09666526,85.9,59,1.771562975,-0.536733228,2.699027204,59
 Ballarat,LGA20570,Regional,38,590,710,648.3722204,285,109505,384.2280702,36,114,32.87521118,88.4,57.4,1.516868551,-0.260499189,19.60173641,57.4
