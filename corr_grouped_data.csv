@@ -1,37 +1,37 @@
 item,var_1,var_2,corr
-1,log Active Cases,log Active Cases,N/A
+1,log Active Cases,log Active Cases,0
 2,2nd Vaccination %,log Active Cases,-0.650732152
 3,Median Age,log Active Cases,-0.762412637
 4,Median Weekly Income (normalised),log Active Cases,0.419822518
 5,"non-English speakers per 100,000",log Active Cases,0.569601129
 6,sqrt Population Density,log Active Cases,0.350612383
 7,log Active Cases,2nd Vaccination %,-0.650732152
-8,2nd Vaccination %,2nd Vaccination %,N/A
+8,2nd Vaccination %,2nd Vaccination %,0
 9,Median Age,2nd Vaccination %,0.798215566
 10,Median Weekly Income (normalised),2nd Vaccination %,-0.085703899
 11,"non-English speakers per 100,000",2nd Vaccination %,-0.650002247
 12,sqrt Population Density,2nd Vaccination %,-0.226692769
 13,log Active Cases,Median Age,-0.762412637
 14,2nd Vaccination %,Median Age,0.798215566
-15,Median Age,Median Age,N/A
+15,Median Age,Median Age,0
 16,Median Weekly Income (normalised),Median Age,-0.492708424
 17,"non-English speakers per 100,000",Median Age,-0.619983005
 18,sqrt Population Density,Median Age,-0.395660603
 19,log Active Cases,Median Weekly Income (normalised),0.419822518
 20,2nd Vaccination %,Median Weekly Income (normalised),-0.085703899
 21,Median Age,Median Weekly Income (normalised),-0.492708424
-22,Median Weekly Income (normalised),Median Weekly Income (normalised),N/A
+22,Median Weekly Income (normalised),Median Weekly Income (normalised),0
 23,"non-English speakers per 100,000",Median Weekly Income (normalised),0.11545429
 24,sqrt Population Density,Median Weekly Income (normalised),0.399925944
 25,log Active Cases,"non-English speakers per 100,000",0.569601129
 26,2nd Vaccination %,"non-English speakers per 100,000",-0.650002247
 27,Median Age,"non-English speakers per 100,000",-0.619983005
 28,Median Weekly Income (normalised),"non-English speakers per 100,000",0.11545429
-29,"non-English speakers per 100,000","non-English speakers per 100,000",N/A
+29,"non-English speakers per 100,000","non-English speakers per 100,000",0
 30,sqrt Population Density,"non-English speakers per 100,000",0.322223126
 31,log Active Cases,sqrt Population Density,0.350612383
 32,2nd Vaccination %,sqrt Population Density,-0.226692769
 33,Median Age,sqrt Population Density,-0.395660603
 34,Median Weekly Income (normalised),sqrt Population Density,0.399925944
 35,"non-English speakers per 100,000",sqrt Population Density,0.322223126
-36,sqrt Population Density,sqrt Population Density,N/A
+36,sqrt Population Density,sqrt Population Density,0
