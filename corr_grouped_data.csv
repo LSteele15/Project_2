@@ -1,37 +1,37 @@
 item,var_1,var_2,corr
-1,Cases (Active),Cases (Active),0
-2,2nd Vaccination %,Cases (Active),-0.650732152
-3,Age,Cases (Active),-0.762412637
-4,Weekly Income (normalised),Cases (Active),0.419822518
-5,Non-English speaking %,Cases (Active),0.569601129
-6,Population Density,Cases (Active),0.350612383
-7,Cases (Active),2nd Vaccination %,-0.650732152
-8,2nd Vaccination %,2nd Vaccination %,0
-9,Age,2nd Vaccination %,0.798215566
-10,Weekly Income (normalised),2nd Vaccination %,-0.085703899
-11,Non-English speaking %,2nd Vaccination %,-0.650002247
-12,Population Density,2nd Vaccination %,-0.226692769
-13,Cases (Active),Age,-0.762412637
-14,2nd Vaccination %,Age,0.798215566
-15,Age,Age,0
-16,Weekly Income (normalised),Age,-0.492708424
-17,Non-English speaking %,Age,-0.619983005
-18,Population Density,Age,-0.395660603
-19,Cases (Active),Weekly Income (normalised),0.419822518
-20,2nd Vaccination %,Weekly Income (normalised),-0.085703899
-21,Age,Weekly Income (normalised),-0.492708424
-22,Weekly Income (normalised),Weekly Income (normalised),0
-23,Non-English speaking %,Weekly Income (normalised),0.11545429
-24,Population Density,Weekly Income (normalised),0.399925944
-25,Cases (Active),Non-English speaking %,0.569601129
-26,2nd Vaccination %,Non-English speaking %,-0.650002247
-27,Age,Non-English speaking %,-0.619983005
-28,Weekly Income (normalised),Non-English speaking %,0.11545429
-29,Non-English speaking %,Non-English speaking %,0
-30,Population Density,Non-English speaking %,0.322223126
-31,Cases (Active),Population Density,0.350612383
-32,2nd Vaccination %,Population Density,-0.226692769
-33,Age,Population Density,-0.395660603
-34,Weekly Income (normalised),Population Density,0.399925944
-35,Non-English speaking %,Population Density,0.322223126
-36,Population Density,Population Density,0
+1,Cases (Active),Cases (Active),0.00
+2,2nd Vaccination %,Cases (Active),-0.65
+3,Age,Cases (Active),-0.76
+4,Weekly Income (normalised),Cases (Active),0.42
+5,Non-English speaking %,Cases (Active),0.57
+6,Population Density,Cases (Active),0.35
+7,Cases (Active),2nd Vaccination %,-0.65
+8,2nd Vaccination %,2nd Vaccination %,0.00
+9,Age,2nd Vaccination %,0.80
+10,Weekly Income (normalised),2nd Vaccination %,-0.09
+11,Non-English speaking %,2nd Vaccination %,-0.65
+12,Population Density,2nd Vaccination %,-0.23
+13,Cases (Active),Age,-0.76
+14,2nd Vaccination %,Age,0.80
+15,Age,Age,0.00
+16,Weekly Income (normalised),Age,-0.49
+17,Non-English speaking %,Age,-0.62
+18,Population Density,Age,-0.40
+19,Cases (Active),Weekly Income (normalised),0.42
+20,2nd Vaccination %,Weekly Income (normalised),-0.09
+21,Age,Weekly Income (normalised),-0.49
+22,Weekly Income (normalised),Weekly Income (normalised),0.00
+23,Non-English speaking %,Weekly Income (normalised),0.12
+24,Population Density,Weekly Income (normalised),0.40
+25,Cases (Active),Non-English speaking %,0.57
+26,2nd Vaccination %,Non-English speaking %,-0.65
+27,Age,Non-English speaking %,-0.62
+28,Weekly Income (normalised),Non-English speaking %,0.12
+29,Non-English speaking %,Non-English speaking %,0.00
+30,Population Density,Non-English speaking %,0.32
+31,Cases (Active),Population Density,0.35
+32,2nd Vaccination %,Population Density,-0.23
+33,Age,Population Density,-0.40
+34,Weekly Income (normalised),Population Density,0.40
+35,Non-English speaking %,Population Density,0.32
+36,Population Density,Population Density,0.00
