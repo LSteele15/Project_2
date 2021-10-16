@@ -116,6 +116,12 @@
     font-size: 13px;
     color: #6b6b6b;
   }
+  .subtitle{
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+  }
   .splom-text{
     text-align: center;
     font-family: 'Lato', sans-serif;
@@ -167,7 +173,10 @@
     margin-bottom: 10px;
   }
   .main-title{
-    margin-bottom: 20px;
+    margin-bottom: -10px;
+  }
+  .main-subtitle{
+    margin-bottom: 30px;
   }
   .vis-gap{
     margin-bottom: 20px;
