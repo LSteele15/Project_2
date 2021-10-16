@@ -1,0 +1,427 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/LSteele15/Project_2/main/vic_lga.topojson",
+    "format": {"type": "topojson", "feature": "vic_lga"}
+  },
+  "resolve": {"scale": {"color": "independent"}},
+  "columns": 3,
+  "concat": [
+    {
+      "width": 250,
+      "height": 325,
+      "projection": {"type": "mercator",
+      "center": [144.48,-37.412],
+      "scale": 13500},
+      "title": {"text":"Active Cases of COVID-19 per 100,000"},
+      "transform": [
+        {
+          "lookup": "properties.ABB_NAME",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/LSteele15/Project_2/main/COVID19%20LGA%20Regional.csv"
+            },
+            "key": "LGA",
+            "fields": ["case_rate", "pop", "active"]
+          }
+        }
+      ],
+      "params": [
+    {
+      "name": "highlight",
+      "select": {"type": "point", "on": "mouseover"}
+    },
+    {"name": "select", "select": "point"}
+  ],
+      "mark": {"type": "geoshape", "stroke": "grey"},
+      "encoding": {
+        "color": {
+          "field": "case_rate",
+          "title": ["Active Cases", "per 100,000"],
+          "type": "quantitative",
+          "scale": {
+            "type": "log",
+            "scheme": "yellowgreenblue",
+            "domain": [70, 700]
+          }
+        },
+        "opacity": {
+      "condition": {"param": "select", "value": 1},
+      "value": 0.3
+    },
+    "strokeWidth": {
+      "condition": [
+        {
+          "param": "select",
+          "empty": false,
+          "value": 2.5
+        },
+        {
+          "param": "highlight",
+          "empty": false,
+          "value": 2
+        }
+      ],
+      "value": 0.5
+    },
+        "tooltip": [
+          {
+            "field": "properties.ABB_NAME",
+            "type": "nominal",
+            "title": "Location"
+          },
+          {"field": "active", "type": "quantitative", "title": "Active Cases"},
+          {"field": "pop", "type": "quantitative", "title": "Population Size"},
+          {"field": "case_rate", "type": "quantitative", "title": "Active Cases per 100,000"}
+        ]
+      }
+    },
+    {
+      "width": 250,
+      "height": 325,
+      "projection": {"type": "mercator",
+      "center": [144.48,-37.412],
+      "scale": 13500},
+      "title": "Population Density (per km^2)",
+      "transform": [
+        {
+          "lookup": "properties.ABB_NAME",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/LSteele15/Project_2/main/COVID19%20LGA%20Regional.csv"
+            },
+            "key": "LGA",
+            "fields": ["pop_density", "pop", "area"]
+          }
+        }
+      ],
+      "params": [
+    {
+      "name": "highlight",
+      "select": {"type": "point", "on": "mouseover"}
+    },
+    {"name": "select", "select": "point"}
+  ],
+      "mark": {"type": "geoshape", "stroke": "grey", "strokeWidth": 0.8},
+      "encoding": {
+        "color": {
+          "field": "pop_density",
+          "title": ["Population", "Density"],
+          "type": "quantitative",
+          "scale": {
+            "type": "log",
+            "scheme": "yellowgreenblue",
+            "domain": [120, 4000]
+          }
+        },
+        "opacity": {
+      "condition": {"param": "select", "value": 1},
+      "value": 0.3
+    },
+    "strokeWidth": {
+      "condition": [
+        {
+          "param": "select",
+          "empty": false,
+          "value": 2.5
+        },
+        {
+          "param": "highlight",
+          "empty": false,
+          "value": 2
+        }
+      ],
+      "value": 0.5
+    },
+        "tooltip": [
+          {
+            "field": "properties.ABB_NAME",
+            "type": "nominal",
+            "title": "Location"
+          },
+          {"field": "pop_density", "type": "quantitative", "title": "Population Density"},
+          {"field": "pop", "type": "quantitative", "title": "Population Size"},
+          {"field": "area", "type": "quantitative", "title": "Land Area (km^2)"}
+        ]
+      }
+    },
+    {
+      "width": 250,
+      "height": 325,
+      "projection": {"type": "mercator",
+      "center": [144.48,-37.412],
+      "scale": 13500},
+      "title": "People who do not speak English per 100,000",
+      "transform": [
+        {
+          "lookup": "properties.ABB_NAME",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/LSteele15/Project_2/main/COVID19%20LGA%20Regional.csv"
+            },
+            "key": "LGA",
+            "fields": ["prop_non_english" ,"pop"]
+          }
+        }
+      ],
+      "params": [
+    {
+      "name": "highlight",
+      "select": {"type": "point", "on": "mouseover"}
+    },
+    {"name": "select", "select": "point"}
+  ],
+      "mark": {"type": "geoshape", "stroke": "grey", "strokeWidth": 0.8},
+      "encoding": {
+        "color": {
+          "field": "prop_non_english",
+          "title": ["No. of", "non-English", "speakers", "per", "100,000"],
+          "type": "quantitative",
+          "scale": {
+            "type": "pow",
+            "exponent": 1,
+            "scheme": "yellowgreenblue",
+            "domain": [1000, 8000]
+          }
+        },
+        "opacity": {
+      "condition": {"param": "select", "value": 1},
+      "value": 0.3
+    },
+    "strokeWidth": {
+      "condition": [
+        {
+          "param": "select",
+          "empty": false,
+          "value": 2.5
+        },
+        {
+          "param": "highlight",
+          "empty": false,
+          "value": 2
+        }
+      ],
+      "value": 0.5
+    },
+        "tooltip": [
+          {
+            "field": "properties.ABB_NAME",
+            "type": "nominal",
+            "title": "Location"
+          },
+          {"field": "prop_non_english", "type": "quantitative", "title": "No. non-English speakers, per 100,000"},
+          {"field": "pop", "type": "quantitative", "title": "Population Size"}
+        ]
+      }
+    },
+    {
+      "width": 250,
+      "height": 325,
+      "projection": {"type": "mercator",
+      "center": [144.48,-37.412],
+      "scale": 13500},
+      "title": "2nd Vaccination %",
+      "transform": [
+        {
+          "lookup": "properties.ABB_NAME",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/LSteele15/Project_2/main/COVID19%20LGA%20Regional.csv"
+            },
+            "key": "LGA",
+            "fields": ["Second" , "pop"]
+          }
+        }
+      ],
+      "params": [
+    {
+      "name": "highlight",
+      "select": {"type": "point", "on": "mouseover"}
+    },
+    {"name": "select", "select": "point"}
+  ],
+      "mark": {"type": "geoshape", "stroke": "grey", "strokeWidth": 0.8},
+      "encoding": {
+        "color": {
+          "field": "Second",
+          "title": ["2nd", "Vaccination", "%"],
+          "type": "quantitative",
+          "scale": {
+            "type": "pow",
+            "exponent": 0.1,
+            "scheme": "yellowgreenblue",
+            "reverse": "True",
+            "domain": [40, 60]
+          }
+        },
+        "opacity": {
+      "condition": {"param": "select", "value": 1},
+      "value": 0.3
+    },
+    "strokeWidth": {
+      "condition": [
+        {
+          "param": "select",
+          "empty": false,
+          "value": 2.5
+        },
+        {
+          "param": "highlight",
+          "empty": false,
+          "value": 2
+        }
+      ],
+      "value": 0.5
+    },
+        "tooltip": [
+          {
+            "field": "properties.ABB_NAME",
+            "type": "nominal",
+            "title": "Location"
+          },
+          {"field": "Second", "type": "quantitative", "title": "2nd Vaccination %"},
+          {"field": "pop", "type": "quantitative", "title": "Population Size"}
+        ]
+      }
+    },
+    {
+      "width": 250,
+      "height": 325,
+      "projection": {"type": "mercator",
+      "center": [144.48,-37.412],
+      "scale": 13500},
+      "title": "Median Age",
+      "transform": [
+        {
+          "lookup": "properties.ABB_NAME",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/LSteele15/Project_2/main/COVID19%20LGA%20Regional.csv"
+            },
+            "key": "LGA",
+            "fields": ["age"]
+          }
+        }
+      ],
+      "params": [
+    {
+      "name": "highlight",
+      "select": {"type": "point", "on": "mouseover"}
+    },
+    {"name": "select", "select": "point"}
+  ],
+      "mark": {"type": "geoshape", "stroke": "grey", "strokeWidth": 0.8},
+      "encoding": {
+        "color": {
+          "field": "age",
+          "title": ["Median", "Age"],
+          "type": "quantitative",
+          "scale": {
+            "type": "pow",
+            "exponent": 1,
+            "scheme": "yellowgreenblue",
+            "reverse": "True",
+            "domain": [30, 43]
+          }
+        },
+        "opacity": {
+      "condition": {"param": "select", "value": 1},
+      "value": 0.3
+    },
+    "strokeWidth": {
+      "condition": [
+        {
+          "param": "select",
+          "empty": false,
+          "value": 2.5
+        },
+        {
+          "param": "highlight",
+          "empty": false,
+          "value": 2
+        }
+      ],
+      "value": 0.5
+    },
+        "tooltip": [
+          {
+            "field": "properties.ABB_NAME",
+            "type": "nominal",
+            "title": "Location"
+          },
+          {"field": "age", "type": "quantitative", "title": "Median Age"}
+        ]
+      }
+    },
+    {
+      "title": "Median Weekly Income ($)",
+      "width": 250,
+      "height": 325,
+      "projection": {"type": "mercator",
+      "center": [144.48,-37.412],
+      "scale": 13500},
+      "transform": [
+        {
+          "lookup": "properties.ABB_NAME",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/LSteele15/Project_2/main/COVID19%20LGA%20Regional.csv"
+            },
+            "key": "LGA",
+            "fields": ["weekly_income"]
+          }
+        }
+      ],
+      "params": [
+    {
+      "name": "highlight",
+      "select": {"type": "point", "on": "mouseover"}
+    },
+    {"name": "select", "select": "point"}
+  ],
+      "mark": {"type": "geoshape", "stroke": "grey", "strokeWidth": 0.8},
+      "encoding": {
+        "color": {
+          "field": "weekly_income",
+          "title": ["Median", "Weekly", "Income", "($)"],
+          "type": "quantitative",
+          "scale": {
+            "type": "log",
+            "scheme": "yellowgreenblue",
+            "reverse": "True",
+            "domain": [500, 800]
+          }
+        },
+        "opacity": {
+      "condition": {"param": "select", "value": 1},
+      "value": 0.3
+    },
+    "strokeWidth": {
+      "condition": [
+        {
+          "param": "select",
+          "empty": false,
+          "value": 2.5
+        },
+        {
+          "param": "highlight",
+          "empty": false,
+          "value": 2
+        }
+      ],
+      "value": 0.5
+    },
+        "tooltip": [
+          {
+            "field": "properties.ABB_NAME",
+            "type": "nominal",
+            "title": "Location"
+          },
+          {"field": "weekly_income", "type": "quantitative", "title": "Median Weekly Income ($)"}
+        ]
+      }
+    }
+  ],
+  "config": {"concat": {"spacing": 8},
+"font": "Lato"} 
+}

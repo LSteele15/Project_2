@@ -1,0 +1,211 @@
+{
+    font-family: 'Lato', sans-serif;
+  }
+  h1{
+    font-weight: 900;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+  }
+  h2{
+    font-weight: 800;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+  }
+  h3{
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+  }
+  .map-title{margin-top: 35px;
+  margin-bottom: 10px;
+}
+  .box{
+      text-align: center;
+      font-family: 'Lato', sans-serif;
+      font-weight: 20;
+      font-size: 13px;
+      padding-left: 60px;
+      padding-right: 40px;
+  }
+  .top-10{
+    margin-top:10px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    font-weight:20;
+    padding-right: 10px;
+    padding-left: 10px; 
+  }
+  .top-15{
+    margin-top:15px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    font-weight:20;
+    padding-right: 10px;
+    padding-left: 10px; 
+  }
+  }
+  .pad-left{
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 20;
+    font-size: 15px;
+    margin-left:200px;
+    padding-right: 20px;
+  }
+  .pad-right{
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 20;
+    font-size: 15px;
+    margin-right: 200px;
+    padding-left: 20px;
+  }
+  .pad-center{
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 20;
+    font-size: 13px;
+    padding-right: 10px;
+    padding-left: 10px; 
+  }
+  .metro-bold{
+    color: #166599;
+    font-weight: 600;
+  }
+  .neg{
+    color: #df2d2d;
+    font-weight: 600;
+  }
+  .regional-bold{
+    color: #d95f0e;
+    font-weight: 600;
+  }
+  .metro{
+    color: #166599;
+    font-weight: 500;
+  }
+  .regional{
+    color: #d95f0e;
+    font-weight: 500;
+  }
+  .red {
+    color: #d6126d;
+    font-weight: 500;
+  }
+  .red-bold{
+    color: #d6126d;
+    font-weight: 600;
+  }
+   body{
+     background-color: lightgray;
+   }
+
+   p{
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 20;
+    font-size: 15px;
+  }
+  .b{
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    color: #6b6b6b;
+  }
+  .splom-text{
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 20;
+    font-size: 13px;
+    margin-top: -10px
+  }
+  .corr-text{
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 20;
+    font-size: 13px;
+    margin-top: 40px;
+    padding-right: 30px;
+    margin-left: -10px;
+  }
+  .heading-text{
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 20;
+    font-size: 15px;
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+   .page{
+     width: 1265px;    
+     background-color: white;   
+     margin: auto;
+     padding: 50px;
+     padding-top: 60px;
+  }
+  .vis-container{
+    width: 100%;
+  }
+  .description h2, h1{
+    margin-top:0px;
+  }
+  .description-right {
+    margin-top:10px;
+    padding-left: 0px;
+    text-align: center;
+  }
+  .description-left{
+    margin-top:10px;
+    padding-right: 0px;
+    text-align: center;
+  }
+  .pure-g{
+    margin-bottom: 10px;
+  }
+  .vis-gap{
+    margin-bottom: 20px;
+  }
+  .purest-g{
+    margin-bottom: 45px;
+  }
+  .bar-title{margin-top: 35px;
+    text-align: center;
+    margin-bottom: 0px;}
+    .data-title{margin-top: 60px;
+      text-align: center;
+      margin-bottom: 0px;}
+  .small-font{
+      font-size: 14px;
+  }
+  .splom-label-right {
+    text-align: right;
+    font-size: 12px;
+  }
+  .splom-label-center {
+    text-align: center;
+    font-size: 12px;
+  }
+  .splom-label-left {
+    text-align: left;
+    font-size: 12px;
+  }
+  .impure-g{
+    margin-bottom: 0px;
+  }
+  .map-text{
+    margin-top:30px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 20;
+    font-size: 13px;
+  }
+  .splom-title{
+    margin-top:25px;
+    text-align: center;
+    margin-bottom: 0px;
+  }
+  }
+}

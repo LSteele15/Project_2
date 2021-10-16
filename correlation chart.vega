@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+      "url": "https://raw.githubusercontent.com/LSteele15/Project_2/main/corr_grouped_data.csv"
+    },
+    "width": 425,
+    "height": 425,
+  "encoding": {
+    "y": {"field": "var_1", "type": "ordinal", "title": "", 
+     "axis": {"labelFontSize": 12}
+    },
+    "x": {"field": "var_2", "type": "ordinal", "title": "",
+    "axis": {"labelFontSize": 12, "labelAngle": 60, "labelOffset": -30}}
+  },
+  "layer": [
+    {
+      "mark": "rect",
+      "params": [{
+        "name": "highlight",
+        "select": {"type": "point", "on": "mouseover"}
+      },
+      {"name": "select", "select": "point"}],
+      "encoding": {
+        "color": {
+          "field": "corr",
+          "type": "quantitative",
+          "title": "Count of Records",
+          "scale": {"scheme": "redblue", "domain": [-1, 1]},
+          "legend": {"title": "R-value"}
+        },
+      "opacity": {
+        "condition": {"param": "select", "value": 1},
+        "value": 0.3
+      },
+      "strokeWidth": {
+        "value": 0
+      },
+      "tooltip": [{"field": "corr", "type": "quantitative", "title": "R-value"}]
+      }
+    },
+    {
+      "mark": {"type": "text",
+      "fontSize": 18},
+      "encoding": {
+        "text": {"field": "corr", "type": "quantitative"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['corr'] == 0",
+            "value": 0
+          },
+          "value": 1
+        }
+      }
+    }
+  ],
+  "config": {
+    "axis": {"grid": true, "tickBand": "extent"},
+    "font": "Lato"
+  }
+}

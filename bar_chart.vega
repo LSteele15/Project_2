@@ -1,0 +1,100 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Bar chart",
+  "data": {
+    "url": "https://raw.githubusercontent.com/LSteele15/Project_2/main/COVID19%20LGA%20Regional%20names.csv"
+  },
+  "params": [
+  ],
+  "transform":[
+  ],
+  "repeat": [
+    "2nd Vaccination %",
+      "Active Cases per 100,000",
+      "Median Age",
+      "Non-English Speakers per 100,000",
+      "Median Weekly Income ($)",
+      "Population Density (per km^2)"
+  ],
+  "columns": 2,
+  "spec":{
+    "width": 500,
+    "height": 65,
+  "params": [
+    {
+      "name": "highlight",
+      "select": {"type": "point", "on": "mouseover"}
+    },
+    {"name": "select", "select": "point"},
+    {
+    "name": "brush",
+    "select": {"type": "interval", "encodings": ["x"]}
+  }
+  ],
+  "mark": {
+    "type": "bar",
+    "stroke": "black",
+    "cursor": "pointer"
+  },
+  "encoding": {
+    "x": {"field": "LGA", "type": "ordinal",  "sort": "-y", "axis": {"labels": false}, "title": ""},
+    "y": {"field": {"repeat": "repeat"}, "type": "quantitative"},
+    "color": {
+        "field": "Region",
+        "type": "nominal",
+        "title": "Region",
+        "legend": false,
+        "scale": {
+          "domain": ["Regional", "Metro"],
+          "range": ["#ec7014", "#2c7fb8"]
+        }
+    },
+    "opacity": {
+      "condition": {"param": "select", "value": 1},
+      "value": 0.3
+    },
+    "opacity": {
+      "condition": {"param": "brush", "value": 1},
+      "value": 0.3
+    },
+    "strokeWidth": {
+      "condition": [
+        {
+          "param": "select",
+          "empty": false,
+          "value": 3
+        },
+        {
+          "param": "highlight",
+          "empty": false,
+          "value": 1
+        },
+        {
+          "param": "brush",
+          "empty": false,
+          "value": 0.7
+        }
+      ],
+      "value": 0
+    },
+    "tooltip": [
+        {"field": "LGA", "type": "nominal"},
+        {"field": "Region", "type": "nominal"},
+        {"field": "Median Age", "type": "quantitative", "format": ",", "title": "Median Age"},
+        {"field": "Active Cases per 100,000", "type": "quantitative", "format": ",", "title": "Active Cases per 100,000"},
+        {"field": "2nd Vaccination %", "type": "quantitative", "format": ",", "title": "2nd Vaccination %"},
+        {"field": "Non-English Speakers per 100,000", "type": "quantitative", "format": ",", "title": "Non-English speakers, per 100,000"},
+        {
+          "field": "Population Density (per km^2)",
+          "type": "quantitative", "title": "Population Density (/km^2)"
+        },
+        {"field": "Median Weekly Income ($)", "type": "quantitative", "format": ",", "title": "Median Weekly Income ($)"}
+      ]
+  }
+},
+"config": {
+  "view": {"width": 400, "height": 300},
+  "axisY": {"titleAngle": 0, "titleX": 10, "titleY": -10, "titleFontSize": 14},
+  "font": "Lato"
+}
+}

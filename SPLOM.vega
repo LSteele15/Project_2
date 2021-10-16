@@ -1,0 +1,137 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/LSteele15/Project_2/main/COVID19%20LGA%20Regional%20prop.csv"
+  },
+  "repeat": {
+    "row": [
+      "Second",
+      "log_active",
+      "age",
+      "prop_non_english",
+      "normalised_weekly_income",
+      "sqrt_pop_density"
+    ],
+    "column": [
+      "Second",
+      "log_active",
+      "age",
+      "prop_non_english",
+      "normalised_weekly_income",
+      "sqrt_pop_density"
+    ]
+  },
+  "params": [
+    {
+      "name": "Population_Above",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 200000,
+        "step": 5000,
+        "name": "Minimum Population: "
+      }
+    }
+  ],
+  "transform": [{"filter": "datum.pop > Population_Above"}],
+  "spec": {
+    "width": 100,
+    "height": 100,
+    "mark": "point",
+    "params": [
+      {
+        "name": "brush",
+        "select": {
+          "type": "interval",
+          "resolve": "union",
+          "on": "[mousedown[event], window:mouseup] > window:mousemove!",
+          "translate": "[mousedown[event], window:mouseup] > window:mousemove!",
+          "zoom": "wheel![event]"
+        }
+      },
+    {"name": "region_highlight",
+    "select": {"type": "point", "fields":["region"]},
+    "bind": "legend"}
+    ],
+    "encoding": {
+      "x": {"field": {"repeat": "column"}, "type": "quantitative", "title": "", "scale": {"zero": false}},
+      "y": {
+        "field": {"repeat": "row"},
+        "type": "quantitative", "title":"",
+        "scale": {"zero": false}
+      },
+      "size": {
+        "field": "pop",
+        "title": "Population size",
+        "type": "quantitative",
+        "scale": {
+          "type": "threshold",
+          "domain": [50000, 100000, 150000, 200000],
+          "range": [5, 10, 18, 25, 30]
+        },
+        "legend": {"format": ".2s"}
+      },
+      "color": {
+        "condition": {
+          "param": "brush",
+          "field": "region",
+          "type": "nominal",
+          "title": "Region",
+          "scale": {
+            "domain": ["Regional", "Metro"],
+            "range": ["#d95f0e", "#2c7fb8"]
+          }
+        },
+        "value": "grey"
+      },
+      "opacity": {
+ "condition": {"param": "region_highlight", "value": 1},
+ "value": 0.2
+ },
+      "tooltip": [
+        {"field": "LGA", "type": "nominal"},
+        {"field": "region", "type": "nominal", "title": "Region"},
+        {"field": "active", "title": "Active Cases", "type": "quantitative"},
+        {
+          "field": "pop",
+          "title": "Population size",
+          "type": "quantitative",
+          "format": ","
+        },
+        {
+          "field": "case_rate",
+          "title": "Cases per 100,000",
+          "type": "quantitative",
+          "format": ".2f"
+        },
+        {
+          "field": "Second",
+          "title": "2nd Vaccination %",
+          "type": "quantitative",
+          "format": ".3f"
+        },
+        {
+          "field": "weekly_income",
+          "title": "Median Weekly Income ($)",
+          "type": "quantitative",
+          "format": ".3f"
+        },
+        {
+          "field": "pop_density",
+          "title": "Population per km^2",
+          "type": "quantitative",
+          "format": ".3f"
+        },
+        {
+          "field": "prop_non_english",
+          "title": "non-English speaking people per 1000",
+          "type": "quantitative",
+          "format": ".3f"
+        }
+      ]
+      }
+    },
+"config": {"concat": {"spacing": -5},
+"font": "Lato"} 
+}

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Project 2</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+
+
+</head>
+<body>
+
+  
+
+ <div class="page">
+   <div class="pure-g">
+    <div class="pure-u-1-1">
+      <h1>Socio-Economic and COVID-19 indicators in Victoria</h1>
+    </div>
+   </div>
+  
+  
+   <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-5">
+        <div class=pad-center>
+        In January 2020, COVID-19 hit Victoria for the first time.
+        Since then, Victoria has endured 3 waves of COVID-19.
+        The most recent wave being the most dangerous and out of control, due to the new wildly infectious Delta variant.
+        The following dashboard investigates 6 different Socio-Economic and COVID-19 indicators (as of October 8th 2021)
+          </div>
+      </div>
+        <div class="pure-u-1-5">
+        <div class=pad-center>
+          <br>
+          These 6 indicators being explored include:<br>
+          <span class=red-bold> Active Case % of COVID-19</span>,<br>
+           <span class=red-bold> 2nd Vaccination %'s</span>, <span class=red-bold> Median Age</span>, <br>
+        ,<span class=red-bold> % of Non-English Speakers</span>,<br> <span class=red-bold>Median Weekly Income</span>,<br>
+        and <span class=red-bold> Population Density</span>.
+         </div>
+          </div>
+          <div class="pure-u-1-5">
+            <div class=pad-center>
+              Here “Non-English Speakers” refers to all people who participated in the 2016 census which considered themselves to speak English “poorly or not at all”.<br>
+              <br>
+              For our purposes, Victoria will be separated into <span class=red-bold>LGAs (Local Government Areas)</span>.
+        </div>
+          </div>
+         <div class="pure-u-1-5">
+          <div class=pad-center>
+            How are active cases of COVID-19 distributed around Victoria? What about vaccination %'s? How much does vaccination really reduce cases?<br>
+            What areas have the most non-English speakers? What areas are the youngest? What areas are the poorest? What areas are the most dense?<br>
+          </div>
+        </div>
+            <div class="pure-u-1-5">
+              <div class=pad-center>
+              Do these factors relate to where cases are distributed? If so, how? To what extent? 
+            What are the key differences between <span class=metro-bold>Metropolitan (Metro)</span> and <span class=regional-bold>Regional</span> Victoria?<br>
+            <br>
+            Lets find out... 
+            </div>
+      </div>
+    </div>
+  <!-- end pure grid group -->
+
+   <!-- pure grid group -->
+   <div class="splom-title">
+    <div class="pure-u-1-1">
+      <h2>How do indicators <span class=red-bold>relate</span> to each other?</h2>
+    </div>
+  </div>
+<!-- end pure grid group -->
+
+<!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-5">
+        <div class=pad-center>
+          <br>
+        Below, the relationships between the discussed 6 different indicators are visualised.
+      </div>
+      </div>
+        <div class="pure-u-1-5">
+        <div class=pad-center>
+            Transformations have been added to some of the indicators so the data is more readable, and so relationships converge to a linear trend.<br>
+          </div>
+         </div>
+          <div class="pure-u-1-5">
+            <div class=pad-center>
+              A log transformation was applied to the active cases.<br> 
+              Weekly Income was normalised - so it is expressed in terms of standard deviations below/above the mean.
+          </div>
+          </div>
+          <div class="pure-u-1-5">
+            <div class="pad-center">
+              A square root transformation was applied to population density.<br>
+              Drag the slider at the bottom to remove areas of lower <span class=red>population</span>.
+          </div>
+          </div>
+            <div class="pure-u-1-5">
+              <div class="pad-center">
+              Click and drag to highlight certain LGAs (points).
+              Click on <span class="metro-bold">"Metro"</span> or <span class=regional-bold>"Regional"</span> in the top right to highlight a region.<br>
+              </div>
+          </div>
+      </div>
+
+    <!-- pure grid group -->
+    <div class="impure-g">
+      <div class="pure-u-8-24">
+      </div>
+      <div class="pure-u-3-24">
+        <div class='splom-label-center'>
+          <br>2nd <br> Vaccination %
+        </div>
+      </div>
+      <div class="pure-u-2-24">
+        <div class='splom-label-left'>
+          <br>log Active Cases per 100,000
+        </div>
+      </div>
+      <div class="pure-u-2-24">
+        <div class='splom-label-center'>
+          <br>Median Age
+        </div>
+      </div>
+      <div class="pure-u-3-24">
+        <div class='splom-label-center'>
+          Non-English<br>Speakers<br>per 1000
+        </div>
+      </div>
+      <div class="pure-u-2-24">
+        <div class='splom-label-left'>
+          Normalised<br> Weekly<br> Income ($)
+        </div>
+      </div>
+      <div class="pure-u-2-24">
+        <div class='splom-label-center'>
+          <br>sqrt Populaton Density
+        </div>
+      </div>
+      
+    </div>
+  <!-- end pure grid group -->
+
+  <!-- pure grid group -->
+  <div class="purest-g">
+    <div class="pure-u-6-24">
+      <div class='splom-text'><span class=red>Areas with a higher 2nd vaccination %
+      clearly tend to have fewer cases</span>. This is true for both <span class=regional>regional</span> and <span class=metro>metro</span> areas.
+      This is clear evidence of the effectiveness of vaccines.
+      On average, <span class=regional>regional</span> areas tend to have higher vaccination rates and therefore less cases than <span class=metro>metro</span> areas.<br>
+      <br>
+      <span class=red>Older areas tend to have a higher 2nd vaccination %.</span> This is true for both <span class=regional>regional</span> and <span class=metro>metro</span> areas. 
+      This is unsurprising since vaccines were made eligible to older Australians first.
+      People from <span class=regional>regional</span> areas on average are clearly older than those from <span class=metro>metro</span> areas. This would explain why regional areas have higher vaccination %'s. <br>
+      <br>
+      <span class=red>Older areas tend to have lower case rates overall.</span> The most plausible explanation for this is because older areas have higher vaccination rates,
+      which in turn leads to lower case numbers.
+      However, this is only true for <span class=metro>metro areas</span>. If we highlight just <span class=regional>regional areas</span>, there seems to be little relationship
+       between these indicators. <br>
+      <br>
+      The % of non-English speakers in <span class=regional>regional areas</span> are extremely low compared to <span class=metro>metro areas</span>,
+       and do not yield much information.
+      <span class=metro>Metro areas</span> <span class=red> with a higher % of non-English speakers tend to be younger, less vaccinated, have higher case numbers,
+      and are lower income areas.</span>
+      There are two metro areas that are outliers with a significantly higher % of non-English speakers.<br>
+      <br>
+      On average, people from <span class=metro>metro areas</span> have a greater income than those from <span class=regional>regional areas</span>. 
+      The only clear relationship for regional areas involving income, is that <span class=red>lower income <span class=regional>regional areas</span> tend to have older populations</span>.
+      However, <span class=red>for<span class=metro> metro areas</span>, income has no association with age</span>.
+      There appears to be <span class=red>no other relationships between income and other indicators for <span class=regional>regional areas.</span>
+      Higher income <span class=metro>metro areas</span> tend to have higher case numbers and a younger population.</span> 
+      There are outlier metro areas with significantly higher income than the rest. <br>
+      <br>
+      Obviously, <span class=regional>regional areas</span> have a far smaller population density compared to <span class=metro>metro areas</span>. 
+      and as a result provide little insight.
+      <span class=red>People from densely populated <span class=metro>metro areas</span> tend to have greater income.</span>
+      However, there appears to be <span class=red>no relationship between population density and any other indicator.</span>
+      This is surprising, as population density is known to assist the transmission of COVID-19.
+      A possible explanation is that the other indicators cause a much greater variation in case numbers,
+      meaning the affect of population density is insignificant in comparison.
+      
+      </div>
+    </div>
+    <div class="pure-u-2-24">
+      <div class='splom-label-right'><br><br><br>2nd<br> Vaccination<br>%
+      <br><br><br><br><br>log<br>Active<br>Cases<br>per<br>100,000
+      <br><br><br><br><br></r><br><br>Median<br>Age<br><br><br>
+      <br><br><br>Non-<br>English<br>Speakers<br>per<br>1000<br>
+      <br><br><br><br>Normalised<br>Median<br>Weekly<br>Income ($)<br>
+      <br><br><br><br><br>sqrt<br>Population<br>Density<br>
+    </div>
+    </div>
+      <div class="pure-u-1-2">
+        <div id="SPLOM" class="vis-container"></div>
+      </div>
+  </div>
+  <!-- end pure grid group -->
+
+  <!-- pure grid group -->
+  <div class="impure-g">
+    <div class="pure-u-1-1">
+      <h2>How strong is the <span class=red-bold>correlation</span> between any two indicators<br>
+        for <span class=metro-bold>Metro Melbourne?</span></h2>
+        <p>
+          Below is a grid representing the <span class=red>correlations</span> between each indicator.
+        </p>
+    </div>
+  </div>
+<!-- end pure grid group -->
+
+  <!-- pure grid group -->
+  <div class="purest-g">
+    <div class="pure-u-14-24">
+      <div id="Corr" class="vis-container"></div>
+    </div>
+    <div class="pure-u-9-24">
+      <div class='corr-text'>Here, we use the <span class=red-bold>Pearson Correlation Coefficient (R-value)</span>.
+      This measures the <span class=red>linear correlation</span> between any two variables and <span class=red>spans
+      values -1 to 1</span>. An R-value close to 1 implies that variables have a <span class=metro-bold>strong positive correlation</span>, whilst a 
+      value close to -1 implies that variables have a <span class=neg>strong negative correlation</span>. Values close to 0 indicates that variables
+      have <span class=b>no correlation</span>.
+      Magnitudes between 0.25 and 0.50 generally imply weak correlations between variables,
+      whilst magnitudes between 0 and 0.25 generally mean variables are uncorrelated.<br>
+      <br>
+      Since the R-value measures the linear correlation between variables, if indicators
+      are strongly related in a <span class=red> non-linear</span> fashion, it may result in a <span class-red>low R-value</span>.
+      This is why it was essential in the previous section to transform the indicators to linearity. <br>
+      <br>
+      The <span class=red>tiles on the diagonal</span> are blank, as they represent the correlation between two identical indicators.
+      Although they have an R-value of 1, they <span class=red>contain no useful information</span>.<br>
+      <br>
+      <span class=metro> This chart only contains the data from metro areas</span>. The reason for this is that often regional
+      areas did not follow a trend, where metro areas did. The only exception to this is for 
+      Age vs Income. <span class=red>For Age vs Income, metro areas had nearly no correlation (R-value 0.08),
+      whilst regional areas clearly displayed a negative correlation.</span>
+      Since metro areas contain most of the 
+      population and most of the COVID-19 cases, it is sensible to focus there.<br>
+      <br>
+      Observing the 9 squares in the top-left corner, notice that <span class=red>2nd Vaccination %,
+      Active Cases, and Age, are all strongly correlated with one another.</span>
+      These 3 are correlated together more so than any other indicators. Moreover, the strongest correlation
+      is between age and 2nd vaccination %, followed by the correlation between 2nd vaccination % and active cases,
+      followed by the correlation between active cases and age. This supports the earlier hypothesis that older areas
+      are what lead to high vaccination rates which leads to fewer active cases.<br>
+      <br>
+      <span class=red>Population Density is uncorrelated with every indicator exept for Median Income</span><br>
+      </div>
+
+
+    </p>
+    </div>
+  </div>
+  <!-- end pure grid group -->
+
+  <!-- pure grid group -->
+  <div class="pure-g">
+    <div class="pure-u-1-1">
+      <h2>For each indicator, how do the <span class=red-bold>distributions</span> for <br> <span class=metro-bold>Metro</span> and <span class=regional-bold>Regional</span> areas compare?</h2>
+      <p>To obtain <span class=red>5 point summaries</span> and individual <span class=red>LGA stats</span>, hover the mouse over each boxplot/points.</p>
+    </div>
+  </div>
+<!-- end pure grid group -->
+
+  <!-- pure grid group -->
+  <div class="pure-g">
+    <div class="pure-u-11-24">
+      <div class="box">
+        As shown previously, Regional Victoria have a higher <span class=red-bold>2nd Vaccination %</span> than Metro Melbourne.
+        <span class=metro>Bayside</span> is leading the way in 2nd Vaccination % for Metro Victoria, with a considerably higher % then the other metro areas.
+        <span class=regional>Queenscliffe</span> has an outstanding 87% 2nd vaccination percentage. However it should be noted, that Queenscliffe is an extremely
+        small area, spanning only 9km^2 with a population of under 3000 people. <span class=regional>Mitchell, Mildura</span> and <span class=regional>Latrobe</span> lag behind the rest of 
+        Regional Victoria in vaccination %.<br>
+        <br>
+        <br>
+        With the exception of <span class=regional>Mitchell</span> which clearly has the worst <span class=red-bold>Active Case %</span> in Regional Victoria,
+        all regional areas have very low active case %'s. In fact, at least a quarter of all regional areas have 
+        0 cases.<br>
+        Unsurprisingly, Metro Melbourne has signicantly worse active case %'s' across the board. <span class=metro>Hume</span> has by far the worst case %,
+        with over double the next highest area (<span class=metro>Whittlesea)</span>. These two areas share a considerable bulk of cases. <br>
+        <br>
+        <br>
+        <br>
+        As shown previously, Regional LGAs have a much higher <span class=red-bold>Median Age</span> compared to Metro LGAs.
+        Regional LGAs have a larger range of median ages than their Metro counterparts.
+        The <span class=metro>Mornington Peninsula</span> is the only outlier, with a signficantly older population than the rest of Metro Melbourne. <br>
+        <br>
+        <br>
+        <br>
+        Regional Victoria has very few <span class=red-bold>Non-English Speakers</span>. <span class=regional>Swan Hill</span> and <span class=regional>Greater Shepparton</span> are the only areas with over 3% of their 
+        population who do not speak English. Metro Melbourne has a much greater range of values. Areas have %'s that range from as 
+        low as 1%, to as high as 15%. <span class=metro>Greater Dandenong</span> and <span class=regional>Brimbank</span> are clear outliers with a significantly higher % of non-English
+        speakers than the rest of Metro Victoria.<br>
+        <br>
+        <br>
+        <br>
+        Metro LGAs tend to have a higher <span class=red-bold>Median Weekly Income</span> than Regional LGAs. That being said, Metro Melbourne has a much wider
+        range of Median Incomes. <span class=metro>Greater Dandenong</span> has a Median Weekly Income of $475, which is towards the lower end of Regional Victoria.
+        Meanwhile, <span class=metro>Stonnington, Yarra,</span> and <span class=metro>Port Phillip</span> have Median Weekly Incomes of over $1000. Far more than the rest of Metro Melbourne.<br>
+        <br>
+        <br>
+        <br>
+        Regional Victoria is obviously very sparse compared to Metro Melbourne. All its LGAs have a very low <span class=red-bold>Population Density.</span> Its entire distribution is squished to 0 compared to 
+        Metro Melbourne, which contains LGAs with a wide variety of population densities. These extend from
+        sparse areas like <span class=metro>Yarra Ranges (231 people/km^2)</span>,<br>
+        to dense areas such as <span class=metro>Port Phillip (5504 people/km^2)</span>.<br>
+
+      </div>
+    </div>
+    <div class="pure-u-1-2">
+      <div id="Boxplot" class="vis-container"></div>
+    </div>
+    <div class="pure-u-1-24">
+    </div>
+  </div>
+  <!-- end pure grid group -->
+
+  <!-- pure grid group -->
+  <div class="map-title">
+    <div class="pure-u-1-1">
+      <h2>Indicators by <span class=metro-bold>Metro Melbourne LGAs</span></h2>
+      <p>Now we will take a closer look at the specific <span class=metro>LGAs</span> of <span class=metro>Metro Melbourne</span>.<br>
+        We will see if observing the geography of the LGAs in combination with their indicator values will allow for further insight.<br>
+        <span class=red>Highlight</span> an LGA by clicking, to compare indicators across that LGA.
+      </p>
+    </div>
+  </div>
+<!-- end pure grid group -->
+
+  <!-- pure grid group -->
+  <div class="pure-g">
+    <div class="pure-u-20-24">
+      <div id="Map" class="vis-container"></div>
+    </div>
+    <div class="pure-u-4-24">
+      <div class="map-text">
+        Majority of <span class=red-bold>active cases</span> are clustered in the north-east of Melbourne </span>,
+        with <span class=metro>Hume</span> being the clear COVID-19 hotspot. It makes sense that neighbours
+        of <span class=metro>Hume</span> also have high case %'s. This includes the second highest hotspot - <span class=metro>Whittlesea</span>.
+        There is also some spreading in the South East, including <span class=metro>Greater Dandenong</span>,
+        <span class=metro>Casey</span> and <span class=metro>Cardinia</span>.<br>
+        <br>
+        The most densely populated area is <span class=metro>Port Phillip</span>. Starting from that point,
+        <span class=red-bold>population density</span> reduces as you move radially outward, exhibited by a smooth
+        gradient on the map.<br>
+        <br>
+        <span class=metro>Greater Dandenong</span> and <span class=metro>Brimbank</span> both have extremely high percentages of
+        <span class=red-bold>non-English speakers</span>. Outer areas on the east side such as <span class=metro>Nillumbik, Yarra Ranges,
+        Cardinia,</span> and <span class=metro>Mornington Peninsula</span> also have very low percentages.<br>
+      <br>
+        Notice the similarity pattern between <span class=red-bold>2nd Vaccination %</span> and Active Cases. 
+        There are much lower vaccination rates in the north west and south east - 
+        which mirrors the distrubtion of active cases.<br>
+        <br>
+        The map of <span class=red-bold>Median Age</span>, also looks similar to the map of
+        2nd Vaccination % and Active Cases.
+         This supports the correlation findings from earlier.<br>
+        <br>
+        Areas around the CBD such as <span class=metro>Port Phillip, Stonnington,</span> and <span class=metro>Yarra</span>
+        are unsurprisingly home to people with
+        the largest <span class=red-bold>Median Weekly Income</span>. Also, areas of low Median Income
+        seem to match the areas of high % of non-English speakers.
+        Particularly <span class=metro>Greater Dandenong</span> and <span class=metro>Brimbank.</span>
+      </div>
+      </div>
+  </div>
+  <!-- end pure grid group -->
+
+  <!-- pure grid group -->
+  <div class="bar-title">
+    <div class="pure-u-1-1">
+      <h2>How do <span class=red-bold>LGA's</span> compare across different indicators?</h2>
+      </div>
+      </div>
+    <div class="pure-g">
+      <div class="pure-u-1-5">
+      <div class=pad-center> The following chart ranks each LGA for each indicator. The lengths of the bars
+        quantifies the indicator for each LGA.
+        Notice that for all indicators,
+        metro and regional LGAs appear clustered on either end of each scale.</div>
+        </div>
+        <div class="pure-u-1-5">
+          <div class=pad-center>
+        <span class=red>Hover the mouse over a bar to identify the LGA and its indicator numbers.
+        Select an LGA by clicking any bar with the mouse</span>.
+        You can do this for multiple bars.
+        Using this, we can see where any given LGA ranks for all 6 indicators.
+          </div>
+        </div>
+        <div class="pure-u-1-5">
+          <div class=pad-center>
+        For instance, <span class=metro>Hume</span> ranks 1st for Active Case %, towards the top for non-English speaking %,
+        towards the bottom for Vaccination %, Median Age, and Weekly Income, and towards the center
+        for population density.
+          </div>
+        </div>
+        <div class="pure-u-1-5">
+          <div class=pad-center>
+            <br>
+            <span class=red>You can also select a range of bars by clicking and dragging on any chart </span>. This way you can get a hands
+        on feel for all the discoveries made in the previous sections.
+          </div>
+        </div>
+        <div class="pure-u-1-5">
+          <div class=pad-center>
+        For instance, if we highlight all the LGAs on the lower end of the Median Age scale,
+        we can directly see it corresponds with lots of LGAs on the lower end of 2nd Vaccination % scale,
+        and the higher end of Active Cases per 100,000 scale.
+          </div>
+        </div>
+  </div>
+<!-- end pure grid group -->
+
+  <!-- pure grid group -->
+  <div class="pure-g">
+    <div class="pure-u-20-24">
+      <div id="Bar" class="vis-container"></div>
+    </div>
+    </div>
+  <!-- end pure grid group -->
+
+  <!-- pure grid group -->
+  <div class="data-title">
+    <div class="pure-u-1-1">
+      <h3>Data Sources</h3>
+      <p>
+        All case numbers and population figures were obtained from the Victorian Government’s provided data:<br>
+         https://www.coronavirus.vic.gov.au/victorian-coronavirus-covid-19-data<br>
+         <br>  
+         All vaccination data was gathered from:<br>
+          https://covidlive.com.au/.<br>
+         <br>
+         Other measures by LGA were found from Census data via the Australian Bureau of Statistics:<br>
+          https://www.abs.gov.au/websitedbs/D3310114.nsf/Home/2016%20DataPacks
+
+      </p>
+      </div>
+      </div>
+<!-- end pure grid group -->
+   
+<script type="text/javascript">
+  var specSPLOM = "SPLOM.vega";
+  var specCorr= "correlation chart.vega";
+  var specBoxplot= "box_plot.vega";
+  var specBar= "bar_chart.vega";
+  var specMap= "Map.vega";
+
+  vegaEmbed('#SPLOM', specSPLOM, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+   vegaEmbed('#Corr', specCorr, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#Boxplot', specBoxplot, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#Bar', specBar, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#Map', specMap, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+</body>
+</html>
