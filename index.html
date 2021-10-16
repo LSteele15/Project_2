@@ -83,7 +83,7 @@
   <!-- end pure grid group -->
 
    <!-- pure grid group -->
-   <div class="title">
+   <div class="splom-title">
     <div class="pure-u-1-1">
       <h2>How do indicators <span class=red-bold>relate</span> to each other?</h2>
     </div>
@@ -126,7 +126,7 @@
 
     <!-- pure grid group -->
     <div class="impure-g">
-      <div class="pure-u-8-24">
+      <div class="pure-u-9-24">
       </div>
       <div class="pure-u-3-24">
         <div class='splom-label-center'>
@@ -135,27 +135,30 @@
       </div>
       <div class="pure-u-2-24">
         <div class='splom-label-left'>
-          <br>log Active Cases per 100,000
-        </div>
-      </div>
-      <div class="pure-u-2-24">
-        <div class='splom-label-center'>
-          <br>Median Age
-        </div>
-      </div>
-      <div class="pure-u-3-24">
-        <div class='splom-label-center'>
-          Non-English<br>Speakers<br>per 1000
+          <br>log Active Cases<br> per 100,000
         </div>
       </div>
       <div class="pure-u-2-24">
         <div class='splom-label-left'>
-          Normalised<br> Weekly<br> Income ($)
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Median Age
         </div>
       </div>
       <div class="pure-u-2-24">
         <div class='splom-label-center'>
-          <br>sqrt Populaton Density
+          Non-English<br>
+          Speakers<br>
+          per 1000
+        </div>
+      </div>
+      <div class="pure-u-2-24">
+        <div class='splom-label-center'>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Normalised<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Weekly<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Income ($)
+        </div>
+      </div>
+      <div class="pure-u-2-24">
+        <div class='splom-label-center'>
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sqrt Populaton<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Density
         </div>
       </div>
       
@@ -164,7 +167,7 @@
 
   <!-- pure grid group -->
   <div class="purest-g">
-    <div class="pure-u-6-24">
+    <div class="pure-u-7-24">
       <div class='splom-text'><span class=red>Areas with a higher 2nd vaccination %
       clearly tend to have fewer cases</span>. This is true for both <span class=regional>regional</span> and <span class=metro>metro</span> areas.
       This is clear evidence of the effectiveness of vaccines.
@@ -204,14 +207,14 @@
     </div>
     <div class="pure-u-2-24">
       <div class='splom-label-right'><br><br><br>2nd<br> Vaccination<br>%
-      <br><br><br><br><br>log<br>Active<br>Cases<br>per<br>100,000
+      <br><br><br><br><br><br>log<br>Active<br>Cases<br>per<br>100,000
       <br><br><br><br><br></r><br><br>Median<br>Age<br><br><br>
       <br><br><br>Non-<br>English<br>Speakers<br>per<br>1000<br>
-      <br><br><br><br>Normalised<br>Median<br>Weekly<br>Income ($)<br>
+      <br><br><br><br><br>Normalised<br>Median<br>Weekly<br>Income ($)<br>
       <br><br><br><br><br>sqrt<br>Population<br>Density<br>
     </div>
     </div>
-      <div class="pure-u-1-2">
+      <div class="pure-u-9-24">
         <div id="SPLOM" class="vis-container"></div>
       </div>
   </div>
@@ -222,6 +225,10 @@
     <div class="pure-u-1-1">
       <h2>How strong is the <span class=red-bold>correlation</span> between any two indicators<br>
         for <span class=metro-bold>Metro Melbourne?</span></h2>
+    </div>
+  </div>
+  <div class="corr-sub">
+    <div class="pure-u-1-1">
         <p>
           Below is a grid representing the <span class=red>correlations</span> between each indicator.
         </p>
@@ -266,9 +273,6 @@
       <br>
       <span class=red>Population Density is uncorrelated with every indicator exept for Median Income</span><br>
       </div>
-
-
-    </p>
     </div>
   </div>
   <!-- end pure grid group -->
@@ -277,6 +281,10 @@
   <div class="pure-g">
     <div class="pure-u-1-1">
       <h2>For each indicator, how do the <span class=red-bold>distributions</span> for <br> <span class=metro-bold>Metro</span> and <span class=regional-bold>Regional</span> areas compare?</h2>
+    </div>
+  </div>
+  <div class="box-sub">
+    <div class="pure-u-1-1">
       <p>To obtain <span class=red>5 point summaries</span> and individual <span class=red>LGA stats</span>, hover the mouse over each boxplot/points.</p>
     </div>
   </div>
@@ -300,7 +308,6 @@
         with over double the next highest area (<span class=metro>Whittlesea)</span>. These two areas share a considerable bulk of cases. <br>
         <br>
         <br>
-        <br>
         As shown previously, Regional LGAs have a much higher <span class=red-bold>Median Age</span> compared to Metro LGAs.
         Regional LGAs have a larger range of median ages than their Metro counterparts.
         The <span class=metro>Mornington Peninsula</span> is the only outlier, with a signficantly older population than the rest of Metro Melbourne. <br>
@@ -311,7 +318,6 @@
         population who do not speak English. Metro Melbourne has a much greater range of values. Areas have %'s that range from as 
         low as 1%, to as high as 15%. <span class=metro>Greater Dandenong</span> and <span class=regional>Brimbank</span> are clear outliers with a significantly higher % of non-English
         speakers than the rest of Metro Victoria.<br>
-        <br>
         <br>
         <br>
         Metro LGAs tend to have a higher <span class=red-bold>Median Weekly Income</span> than Regional LGAs. That being said, Metro Melbourne has a much wider
@@ -339,6 +345,10 @@
   <div class="title">
     <div class="pure-u-1-1">
       <h2>Indicators by <span class=metro-bold>Metro Melbourne LGAs</span></h2>
+    </div>
+  </div>
+  <div class="map-sub">
+    <div class="pure-u-1-1">
       <p>Now we will take a closer look at the specific <span class=metro>LGAs</span> of <span class=metro>Metro Melbourne</span>.<br>
         We will see if observing the geography of the LGAs in combination with their indicator values will allow for further insight.<br>
         <span class=red>Highlight</span> an LGA by clicking, to compare indicators across that LGA.
@@ -433,8 +443,10 @@
 
   <!-- pure grid group -->
   <div class="pure-g">
-    <div class="pure-u-20-24">
+    <div class="bar-shift">
+    <div class="pure-u-1-1">
       <div id="Bar" class="vis-container"></div>
+    </div>
     </div>
     </div>
   <!-- end pure grid group -->

@@ -24,9 +24,9 @@
       text-align: center;
       font-family: 'Lato', sans-serif;
       font-weight: 20;
-      font-size: 13px;
-      padding-left: 60px;
-      padding-right: 40px;
+      font-size: 14px;
+      padding-left: 80px;
+      padding-right: 20px;
   }
   .top-10{
     margin-top:10px;
@@ -51,7 +51,7 @@
     text-align: center;
     font-family: 'Lato', sans-serif;
     font-weight: 20;
-    font-size: 15px;
+    font-size: 14px;
     margin-left:200px;
     padding-right: 20px;
   }
@@ -59,7 +59,7 @@
     text-align: center;
     font-family: 'Lato', sans-serif;
     font-weight: 20;
-    font-size: 15px;
+    font-size: 14px;
     margin-right: 200px;
     padding-left: 20px;
   }
@@ -67,7 +67,7 @@
     text-align: center;
     font-family: 'Lato', sans-serif;
     font-weight: 20;
-    font-size: 13px;
+    font-size: 14px;
     padding-right: 10px;
     padding-left: 10px; 
   }
@@ -113,7 +113,7 @@
     text-align: center;
     font-family: 'Lato', sans-serif;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 14px;
     color: #6b6b6b;
   }
   .subtitle{
@@ -126,17 +126,18 @@
     text-align: center;
     font-family: 'Lato', sans-serif;
     font-weight: 20;
-    font-size: 13px;
-    margin-top: -10px
+    font-size: 14px;
+    margin-top: -10px;
+    padding-left: 10px;
   }
   .corr-text{
     text-align: center;
     font-family: 'Lato', sans-serif;
     font-weight: 20;
-    font-size: 13px;
-    margin-top: 40px;
-    padding-right: 30px;
-    margin-left: -10px;
+    font-size: 14px;
+    margin-top: 20px;
+    padding-right: 50px;
+    margin-left: -40px;
   }
   .heading-text{
     text-align: center;
@@ -147,7 +148,7 @@
     padding-right: 120px;
   }
    .page{
-     width: 1265px;    
+     width: 1350px;    
      background-color: white;   
      margin: auto;
      padding: 50px;
@@ -171,6 +172,9 @@
   }
   .pure-g{
     margin-bottom: 10px;
+  }
+  .bar{
+    margin-top: 30px;
   }
   .main-title{
     margin-bottom: -10px;
@@ -198,30 +202,54 @@
   }
   .splom-label-right {
     text-align: right;
+    font-family: 'Lato', sans-serif;
     font-size: 12px;
   }
   .splom-label-center {
     text-align: center;
+    font-family: 'Lato', sans-serif;
     font-size: 12px;
   }
   .splom-label-left {
     text-align: left;
     font-size: 12px;
+    font-family: 'Lato', sans-serif;
   }
   .impure-g{
     margin-bottom: 0px;
   }
   .map-text{
-    margin-top:30px;
+    margin-top:40px;
     text-align: center;
     font-family: 'Lato', sans-serif;
     font-weight: 20;
-    font-size: 13px;
+    font-size: 14px;
+    margin-left: -75px;
+    margin-right: 20px;
   }
   .splom-title{
-    margin-top:25px;
+    margin-top:30px;
     text-align: center;
     margin-bottom: 0px;
   }
-  }
+.map-sub{
+  margin-top:-15px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.box-sub{
+  margin-top:-25px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.corr-sub{
+  margin-top:-25px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.bar-shift{
+  margin-top:20px;
+  text-align: center;
+  margin-left: 40px;
+}
 }
